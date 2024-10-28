@@ -23,7 +23,7 @@ git clone即同意，出现任何安全问题作者**概不负责哦**！~
 
 - 💡 简洁的Google风格界面
 
-  ​	![Example Image](assets/pic.png)[/img]
+  ​	![Example Image](assets/pic.png)
 
 ## 技术栈
 
