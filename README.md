@@ -65,7 +65,7 @@ git clone git@github.com:dongluliang/chat.git
 - 建议配置HTTPS以确保通信安全
 - 本聊天未进行上传文件过滤，为防止被上传恶意木马请注意修改配置文件：
 -- Nginx 配置文件使用需要添加
-  ```
+```
  location /upload {
     location ~ \.php$ {
         deny all;
