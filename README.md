@@ -57,20 +57,27 @@ git clone git@github.com:dongluliang/chat.git
 6. 被@时会收到浏览器通知
 7. 删除服务端talk.log时将清空聊天记录
 
-## 安全特性
-
-- 文件上传类型限制
-- XSS防护
-- 文件名安全处理
-- 上传大小限制
-
 ## 注意事项
 
 - 本项目使用文件系统存储聊天记录，适合小型应用场景
 - 不要在生产环境中部署
 - 请确保upload目录具有适当的写入权限
 - 建议配置HTTPS以确保通信安全
-
+- 本聊天未进行上传文件过滤，为防止被上传恶意木马请注意修改配置文件：
+-- Nginx 配置文件使用需要添加
+  ```
+ location /upload {
+    location ~ \.php$ {
+        deny all;
+    }
+}
+```
+- 如果使用 Apache，确保在主配置文件中启用了 `.htaccess`：
+```
+<Directory /path/to/upload>
+    AllowOverride All
+</Directory>
+```
 ## 贡献指南
 
 欢迎提交 Issue 和 Pull Request 来帮助改进这个项目。
